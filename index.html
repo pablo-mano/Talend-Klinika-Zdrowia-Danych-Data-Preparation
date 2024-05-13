@@ -1,0 +1,433 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Data Wizards - &#34;Klinika Zdrowia Danych Talend&#34;</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="talend-klinika-zdrowia-danych-data-preparation"
+                  title="Data Wizards - &#34;Klinika Zdrowia Danych Talend&#34;"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Przewodnik po rozpoczęciu pracy z Talend Cloud Data Preparation" duration="1">
+        <p class="image-container"><img style="width: 223.50px" src="img/a2910a146009d4fb.png"></p>
+<p><strong>Talend Cloud Data Preparation</strong> to aplikacja self-service, która umożliwia pracownikom informacji skrócenie czasu pracy o kilka godzin, upraszczając i przyspieszając żmudny i czasochłonny proces przygotowania danych do analizy lub innych zadań związanych z danymi.</p>
+<p><strong>Talend Cloud Data Preparation</strong> działa na platformie <strong>Talend Cloud</strong> i oferuje możliwości klasy korporacyjnej wraz z łącznością z praktycznie dowolnym źródłem danych. Wspiera współpracę między ludźmi biznesu, którzy najlepiej znają dane, a centralnymi organizacjami, takimi jak IT czy zarządzanie ryzykiem, które definiują zasady i polityki dostępności oraz zarządzania danymi.</p>
+<p>Zawiera:</p>
+<ul>
+<li><strong>Integrację i katalogowanie. </strong></li>
+<li><strong>Odkrywanie danych i profilowanie. </strong></li>
+<li><strong>Czyszczenie, standaryzację i kształtowanie. </strong></li>
+<li><strong>Wzbogacanie i łączenie zestawów danych. </strong></li>
+<li><strong>Operacjonalizacja Talend Cloud Data Preparation.</strong></li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Pielęgnacja danych otrzymanych od klienta" duration="1">
+        <p>Wyobraź sobie, że twoja firma jest dostawcą usług wypożyczania filmów i strumieniowego przesyłania wideo.</p>
+<p>W przykładach opisanych w tym rozdziale musisz oczyścić plik zawierający dane o twoich klientach, takie jak ich imiona, wiek, dane kontaktowe, daty subskrypcji lub liczba wypożyczeń. Chcesz, aby te dane były bardziej przejrzyste i łatwiejsze w obsłudze.</p>
+<p>Ten scenariusz opisuje różnorodne działania, które możesz wykonać na pliku klienta, aby usunąć lub skorygować nieścisłości i poprawić jakość danych.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Logowanie do Talend Cloud Data Preparation" duration="0">
+        <p>Pierwszym krokiem do korzystania z Talend Cloud Data Preparation jest dostęp i zalogowanie się do aplikacji internetowej. Aby zalogować się do Talend Cloud Data Preparation i zacząć z niego korzystać, postępuj w następujący sposób:</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>Zaloguj się do swojego Talend Data Fabric Trial (dane w mailu od`t)</li>
+<li>(TODO : przejdź Talend Data Experience =&gt; Try yourself)</li>
+<li>Aby uzyskać dostęp do strony głównej Talend Cloud Data Preparation, możesz:</li>
+</ol>
+<ul>
+<li>Kliknij na przycisku &#34;Launch&#34; na dole paska &#34;Talend Data Preparation&#34;<br><img alt="Talend Cloud Data Preparation tile." style="width: 616.00px" src="img/90aacd4ab5d131d3.png"></li>
+<li>Kliknij ikonę &#34;Select an app&#34; i wybierz &#34;Data Preparation&#34; z listy dostępnych aplikacji.<br><img alt="List of available applications." style="width: 210.00px" src="img/b033a1641861e3ff.png"></li>
+</ul>
+<h2 is-upgraded><strong>Wynik</strong></h2>
+<p>Osiągnąłeś stronę główną Talend Cloud Data Preparation.</p>
+<p class="image-container"><img alt="Talend Cloud Data Preparation home page." style="width: 624.00px" src="img/4ecf246535c2b4a1.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Otwieranie zestawu danych z lokalnego pliku" duration="5">
+        <p>Teraz zaimportujesz plik zawierający dane klientów i utworzysz swoje pierwsze przygotowanie.</p>
+<p>Po zalogowaniu się do Talend Cloud Data Preparation, zostaniesz przekierowany do widoku Przygotowania.</p>
+<p>Ten widok pokazuje wszystkie twoje przygotowania, innymi słowy zbiory danych, nad którymi rozpocząłeś wykonywanie operacji. Na razie jest pusty, ale to właśnie tutaj zostanie zapisana twoja praca nad danymi klientów. W tym widoku możesz również dodawać nowe przygotowania i organizować je w foldery.</p>
+<p>Aby zaimportować plik klienta zawierający surowe dane, postępuj w następujący sposób:</p>
+<h2 is-upgraded>Zanim zaczniesz</h2>
+<p>Pobierz plik: <a href="https://help.talend.com/en-US/data-preparation-getting-started/Cloud/Content/Resources/attachments/customers.xlsx" target="_blank">customers.xlsx</a>.</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>Z menu lewego panelu wybierz opcję Zbiory danych, aby otworzyć listę zbiorów danych, która w tym momencie również jest pusta.</li>
+<li>Aby zaimportować <a href="https://help.talend.com/en-US/data-preparation-getting-started/Cloud/Content/Resources/attachments/customers.xlsx" target="_blank">customers.xlsx</a> które pobrałeś wcześniej, możesz:</li>
+</ol>
+<ul>
+<li>Kliknij przycisk Usuń plik lub przeglądaj, aby przeglądać pliki i wybrać zbiór danych.</li>
+<li>Bezpośrednio przeciągnij i upuść zbiór danych na ekranie Przygotowanie danych w chmurze Talend.</li>
+</ul>
+<ol type="1" start="3">
+<li>Zostanie otwarta karta Przegląd, w której możesz wyświetlić informacje o zestawie danych.</li>
+<li>Otwórz zakładkę Konfiguruj po lewej stronie ekranu.</li>
+<li>W polu Nazwa zbioru danych wprowadź <code>Klienci</code>.</li>
+<li>Pole Połączenie jest już wypełnione.<br>Ponieważ jest to Twój pierwszy import lokalnego zbioru danych, w trakcie tego procesu zostanie utworzone połączenie typu połączenie lokalne. To podstawowe połączenie zostanie użyte do przesłania wszystkich lokalnych zbiorów danych.</li>
+<li>W sekcji Konfiguracja formatu formularza kliknij przycisk Automatyczne wykrywanie, aby automatycznie wypełnić informacje o formacie.</li>
+<li>Kliknij przycisk Wyświetl przykład, aby wyświetlić podgląd pierwszych 50 wierszy zbioru danych.</li>
+<li>Kliknij opcję Sprawdź, aby zakończyć tworzenie zestawu danych.</li>
+<li>Z menu lewego panelu wybierz Przygotowania i kliknij przycisk Dodaj przygotowanie.</li>
+<li>W otwartym panelu Dodaj przygotowanie wybierz utworzony wcześniej zbiór danych Klienci.<br><img alt="Add a preparation panel." style="width: 624.00px" src="img/635660ed4b0d06a7.png"><br>Pole Nazwa preparatu wypełnia się automatycznie, istnieje jednak możliwość zmiany nazwy preparatu. W tym przykładzie <code>Przygotowanie klientów</code> Jest używane.</li>
+<li>Kliknij opcję Prześlij.</li>
+</ol>
+<h2 is-upgraded><strong>Wyniki</strong></h2>
+<p>Twój zbiór danych otwiera się w postaci preparatu z pustą recepturą. Twoje dane nie zostały jeszcze zmodyfikowane, ale zostały zapisane jako preparat, na którym możesz rozpocząć stosowanie etapów przygotowawczych.</p>
+<p>Ponieważ zaimportowałeś plik <a href="https://help.talend.com/en-US/data-preparation-getting-started/Cloud/Content/Resources/attachments/customers.xlsx" target="_blank">klienci.xlsx</a> zbioru danych i utworzyłeś odpowiedni preparat za pomocą przycisku Dodaj przygotowanie, każda zmiana dokonana w Przygotowaniu Klienta zostanie automatycznie zapisana. Jeśli chodzi o zaimportowany surowy zbiór danych, można go wyświetlić w widoku Zestawy danych, a dane pozostaną niezmienione.</p>
+<p class="image-container"><img alt="Dataset in the form of a preparation with an empty recipe." style="width: 624.00px" src="img/355a20aecdb33374.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Czyszczenie pliku klienta" duration="0">
+        <p>Teraz, gdy środowisko pracy jest już skonfigurowane, możesz rozpocząć pracę nad danymi, aby je oczyścić i ulepszyć.</p>
+<p>Przykłady podane w tym rozdziale zakładają, że:</p>
+<ul>
+<li>Pobrałeś plik <a href="https://help.talend.com/en-US/data-preparation-getting-started/Cloud/Content/Resources/attachments/customers.xlsx" target="_blank">klienci.xlsx</a> plik.</li>
+<li>Otworzyłeś wcześniej utworzone przygotowanie Klienta.</li>
+</ul>
+<p>W tym scenariuszu opisano różne operacje czyszczenia i formatowania, które można wykonać na danych klientów.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Harmonizacja sprawy" duration="0">
+        <p>Pierwszą czynnością będzie naprawienie kolumny zawierającej imiona klientów.</p>
+<p>Można to zauważyć w <a href="https://help.talend.com/en-US/data-preparation-getting-started/Cloud/Content/Resources/attachments/customers.xlsx" target="_blank">klienci.xlsx</a> pliku, występują pewne niespójności między nazwami w kolumnach Imię i Nazwisko. Niektóre zaczynają się od dużej litery, inne są w całości pisane małymi literami, a jeszcze inne są w całości pisane wielkimi literami.</p>
+<p>Aby zharmonizować styl wszystkich komórek kolumny, wykonaj następujące czynności:</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>Kliknij nagłówek kolumny Imię, aby wybrać jej zawartość.</li>
+<li>Trzymając naciśnięty klawisz Ctrl, kliknij nagłówek kolumny Nazwisko.<br>Obie kolumny są teraz wybrane i będziesz je modyfikować jednocześnie.<br><img alt="Two columns selected." style="width: 291.00px" src="img/8da855b2be68f95f.png"></li>
+<li>W panelu Funkcje znajdującym się w prawym górnym rogu ekranu znajdź na liście funkcji opcję Zmień na wielkość liter i kliknij ją.<br><img alt="Change to title case function." style="width: 249.00px" src="img/d6eb41ab547868a8.png"><br>W tym polu znajdują się wszystkie funkcje dostępne do zastosowania na Twoich danych. Wyszukaj żądaną funkcję lub wybierz jedną z sugerowanych. Użyj przycisku Podgląd, aby zobaczyć wpływ, jaki będzie to miało na Twoje dane.</li>
+<li>Kliknij przycisk Prześlij, aby zastosować funkcję w obu kolumnach.<br>Wszystkie nazwy zaczynają się teraz wielką literą, a pozostałe małe.<br><img alt="Two columns selected." style="width: 301.00px" src="img/b8844a1e786a3868.png"></li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Usuwanie białych znaków" duration="0">
+        <p>Jeśli w Twoich danych zostały omyłkowo wprowadzone spacje, możesz zastosować funkcję Usuń znaki końcowe i początkowe, aby je wyczyścić.</p>
+<p>Jest jeszcze trochę do zrobienia w kolumnie Imię i Nazwisko. Rzeczywiście, przed lub za niektórymi nazwami można zobaczyć paski w paski.</p>
+<p class="image-container"><img alt="Example of a striped box behind a name." style="width: 212.00px" src="img/e571e7d7e0339a0d.png"></p>
+<p>Aby usunąć spacje z komórek, wykonaj następujące czynności:</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>Kliknij nagłówek kolumny Imię, aby wybrać jej zawartość.<br><img alt="First_Name column selected." style="width: 166.00px" src="img/7985e78a2f238aea.png"></li>
+<li>Trzymając wciśnięty przycisk Ctrl, kliknij nagłówek kolumny Nazwisko.<br>Dwie kolumny są teraz zaznaczone i możesz zastosować funkcję do obu kolumn w jednej akcji.</li>
+<li>Na liście funkcji kliknij opcję Usuń znaki końcowe i początkowe, aby otworzyć opcje powiązanej funkcji.<br><img alt="Remove trailing and leading characters function." style="width: 258.00px" src="img/cfc9cb8f6bef9b1c.png"></li>
+<li>Z listy rozwijanej Znak dopełniający wybierz białe znaki i kliknij Prześlij.<br>Pasiaste pola zniknęły z komórek w obu kolumnach.<br><img alt="The striped box has disappeared." style="width: 185.00px" src="img/e6c2c769ad6675a4.png"></li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Edycja przepisu" duration="0">
+        <p>Przepis w Talend Cloud Data Przygotowanie, podobnie jak każdy przepis kulinarny, to lista etapów przygotowania zastosowanych do Twoich danych.</p>
+<p>Po wykonaniu czterech czynności związanych z przygotowaniem mogłeś zauważyć, że każdy krok został wypisany po lewej stronie ekranu. Oto przepis na Twoje przygotowanie. Każda funkcja zastosowana na Twoich danych trafia do przepisu.</p>
+<p class="image-container"><img alt="Example of a preparation recipe." style="width: 319.00px" src="img/61ee426bd591f0ff.png"></p>
+<p>Na potrzeby tego przykładu będziesz manipulował różnymi elementami składającymi się na twoje przygotowanie.</p>
+<p>Aby edytować przygotowanie, wykonaj następujące czynności:</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>Aby wyłączyć konkretną linię przepisu, na przykład trzecią, kliknij zielony okrągły przycisk po prawej stronie.<br><img alt="Recipe lines with a grey button for a disabled recipe line or a green button for an enabled recipe line." style="width: 624.00px" src="img/db0cfccc508a47b3.png"><br>Ponieważ każdy etap przygotowania opiera się na poprzednim, wyłączenie jednej linii przepisu powoduje także wyłączenie kolejnych.<br>Ta operacja pozwala sprawdzić stan danych przed zastosowaniem funkcji. W tym przypadku widać, że ponownie można znaleźć spacje w kolumnach Imię i Nazwisko.</li>
+<li>Kliknij zielony przycisk obok czwartej linii przepisu, aby ponownie włączyć efekty dwóch ostatnich funkcji.<br>Możesz użyć tej funkcji, aby wyłączyć cały przepis i zobaczyć dane w oryginalnym stanie. Może to być przydatne, jeśli chcesz porównać dane przed i po.</li>
+<li>Aby usunąć linię przepisu, na przykład ostatnią, najedź kursorem na tę linię i kliknij ikonę kosza po prawej stronie.<br><img alt="A recipe line when you hover over it and click the trash can icon." style="width: 293.00px" src="img/62a6e803bb6b710f.png"><br>W przeciwieństwie do przycisku wyłączania, którego używałeś wcześniej, ikona kosza całkowicie usuwa linię z przepisu.</li>
+<li>Kliknij przycisk cofania w prawej górnej części ekranu.<br><img alt="Undo button." style="width: 69.00px" src="img/e809b036f028cfa8.png"></li>
+</ol>
+<h2 is-upgraded><strong>Wyniki</strong></h2>
+<p>Twoje przygotowanie powróciło do stanu, w jakim było na początku tej procedury. Pamiętaj, że każdą modyfikację można cofnąć. Wiesz już, jak edycja przepisu może wpłynąć na przygotowanie.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Zmiana typu semantycznego" duration="0">
+        <p>Możesz zmienić typ semantyczny danych, aby mieć pewność, że typ danych w kolumnie odpowiada rzeczywistym wartościom.</p>
+<p>Talend Cloud Data Przygotowanie automatycznie sugeruje typ semantyczny Twoich danych. Ten typ jest określony pod nagłówkiem każdej kolumny. W kolumnie Kod pocztowy widać, że kody pocztowe w USA zostały pomylone z francuskimi, ponieważ mają tę samą liczbę cyfr. Teraz ustawisz typ semantyczny kolumny na kod pocztowy w USA.</p>
+<p class="image-container"><img alt="Zip column with FR Postal Code as the semantic type." style="width: 184.00px" src="img/dd73527dd47e12bb.png"></p>
+<p>Aby zmodyfikować typ semantyczny kolumny, wykonaj następujące czynności:</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>Kliknij ikonę opcji w nagłówku kolumny Zip.<br><img alt="Options icon with the expanded menu." style="width: 256.00px" src="img/92ed5285300cb0bd.png"></li>
+<li>W menu kliknij Kolumna to kod pocztowy FR.<br><img alt="FR Postal Code is selected." style="width: 296.00px" src="img/3137c3baf0e50c09.png"><br>Zostanie otwarta lista sugerowanych typów semantycznych.</li>
+<li>Kliknij opcję Kod pocztowy Stanów Zjednoczonych.</li>
+</ol>
+<h2 is-upgraded><strong>Wynik</strong></h2>
+<p>Typ semantyczny kolumny Zip jest teraz ustawiony na <code>Kod pocztowy USA</code>.</p>
+<p class="image-container"><img alt="US Postal Code is set." style="width: 131.00px" src="img/83fd29d804e024fd.png"></p>
+<p>Mówiąc bardziej ogólnie, jeśli typ semantyczny zaproponowany przez Talend Cloud Data Przygotowanie dla jednej kolumny nie jest pożądany, możesz go w każdej chwili zmienić, w oparciu o własne doświadczenia.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Praca z paskiem jakości" duration="0">
+        <p>Najszybszym sposobem zidentyfikowania nieprawidłowych danych jest spojrzenie na pasek jakości.</p>
+<p>Pod każdą kolumną znajduje się pasek jakości, który wyświetla liczbę pól zawierających poprawne dane, nieprawidłowe dane lub puste pola. Każda kategoria jest reprezentowana przez kolor:</p>
+<ul>
+<li>Zielony dla danych zgodnych z formatem komórki</li>
+<li>Szary dla pustych komórek</li>
+<li>Czerwony w przypadku danych, które nie pasują do formatu komórki</li>
+</ul>
+<p>Kliknij dowolny kolor, aby zaznaczyć, usunąć lub wyczyścić komórki zawierające dane w nieprawidłowym formacie. Najechanie kursorem na kolory pozwala wyświetlić dokładną liczbę wierszy dla każdej kategorii, a także procent, jaki reprezentuje w kolumnie.</p>
+<p>Patrząc na pasek jakości pod nagłówkiem kolumny E-mail, możesz zobaczyć, że wśród danych znajdują się puste komórki i nieprawidłowe wartości. Zamierzasz je usunąć.</p>
+<p class="image-container"><img alt="Quality bar under the Email column with a gray part signaling there are empty cells and a red part signaling there are incorrect values." style="width: 138.00px" src="img/b5afc95399bf394.png"></p>
+<p>Aby użyć paska jakości do usunięcia linii zawierających nieprawidłowe komórki, wykonaj następujące czynności:</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>Kliknij szarą część paska jakości w nagłówku kolumny E-mail.<br>Otworzy się menu rozwijane.<br><img alt="Drop-down of the Email column gray part." style="width: 260.00px" src="img/625ff42cae14c75d.png"></li>
+<li>Kliknij opcję Usuń wiersze z pustymi komórkami.<br>Puste komórki z kolumn E-mail zostały usunięte i pozostały tylko nieprawidłowe wartości, reprezentowane przez czerwony pasek.<br><img alt="Only invalid values left in the Email column." style="width: 138.00px" src="img/da081f6761a0a932.png"></li>
+<li>Powtórz dwa ostatnie kroki, ale tym razem kliknij czerwoną część paska jakości i wybierz opcję Usuń wiersze z nieprawidłowymi komórkami.<br>Kolumna E-mail została teraz oczyszczona ze wszystkich nieprawidłowych danych i pustych komórek.<br><img alt="The Email column has only valid values left." style="width: 96.00px" src="img/5b428fb37e349bc9.png"></li>
+<li>Użyj paska jakości, aby usunąć nieprawidłowe komórki z kolumn Kod pocztowy i Telefon.</li>
+</ol>
+<h2 is-upgraded><strong>Wynik</strong></h2>
+<p>Jedyną pozostałą kolumną z nieprawidłowymi danymi jest teraz Stan, ale będziesz ją traktować w inny sposób.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Mieszanie danych" duration="0">
+        <p>Funkcja wyszukiwania umożliwia pobranie danych z istniejącego zbioru danych i dodanie ich do preparatu.</p>
+<p>W tym przykładzie założono, że:</p>
+<ul>
+<li>Pobrałeś i rozpakowałeś plik<a href="https://help.talend.com/en-US/data-preparation-getting-started/Cloud/Content/Resources/attachments/states.zip" target="_blank">stany.zip</a> plik.</li>
+<li>Dodałeś States.csv do swojej listy zbiorów danych w Talend Cloud Data Przygotowanie. Aby uzyskać więcej informacji na temat importowania zestawu danych, zobacz<a href="https://help.talend.com/en-US/data-preparation-getting-started/Cloud/opening-dataset-from-local-file" target="_blank">Otwieranie zbioru danych z pliku lokalnego</a>.</li>
+</ul>
+<p>W tym przykładzie chcesz dodać więcej informacji geograficznych o swoich klientach dzięki posiadanemu plikowi referencyjnemu: zbiorowi danych States. Ten zbiór danych zawiera listę kodów stanów USA i odpowiadających im regionów. Będziesz dynamicznie wykorzystywać dane z tego zbioru danych w celu uzupełnienia swoich przygotowań. Umożliwi to dodanie informacji o regionie subskrypcji każdego klienta na podstawie jego kodu stanu.</p>
+<p>Aby połączyć w swoim przygotowaniu dane z innego zbioru danych, wykonaj następujące czynności:</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>Otwórz swoje przygotowanie.</li>
+<li>Kliknij przycisk wyszukiwania w prawej górnej części ekranu, aby otworzyć panel wyszukiwania.<br><img alt="Lookup button." style="width: 352.00px" src="img/685ad5e8835de053.png"></li>
+<li>Kliknij opcję Wybierz zbiór danych, aby wybrać istniejący zbiór danych.<br><img alt="Select dataset button." style="width: 190.00px" src="img/2529ff08022240bd.png"></li>
+<li>Wybierz zbiór danych, którego chcesz użyć do wyszukiwania (w tym przykładzie jest to zbiór danych stanów).<br><img alt="The states dataset is selected." style="width: 615.00px" src="img/162a893bd57cc5c7.png"></li>
+<li>Kliknij Wybierz.</li>
+<li>Z listy rozwijanej Bieżący zestaw danych przygotowania i wyszukiwania wybierz kolumny pasujące do głównego przygotowania i referencyjnego zestawu danych, czyli w tym przykładzie kolumny Stan i Stan.<br><img alt="Select matching column step with the State columns selected." style="width: 332.00px" src="img/9771d988de3902e7.png"><br>Aby przeprowadzić wyszukiwanie, w przygotowaniu i zestawie danych, który chcesz połączyć, musi znajdować się co najmniej jedna kolumna z pasującymi danymi, w tym przypadku kody stanów USA.<br><img alt="In the preparation and in the dataset, the State columns are matching." style="width: 624.00px" src="img/aae2f9ce78aa85e1.png"></li>
+<li>Z listy rozwijanej Kolumny do dodania wybierz kolumnę Region, aby dodać ją do bieżącego zbioru danych.<br><img alt="In the Import columns step, the Region column is selected." style="width: 328.00px" src="img/47b3c558b9c56341.png"></li>
+<li>Wybierz, czy chcesz zastosować te zmiany tylko w przefiltrowanych wierszach, czy we wszystkich wierszach.</li>
+<li>Kliknij przycisk Prześlij, aby zastosować zmiany i dodać kolumnę Region do swojego przygotowania.</li>
+</ol>
+<h2 is-upgraded><strong>Wynik</strong></h2>
+<p>Twoje dane zawierają teraz nową informację o regionie subskrypcji Twojego klienta, którą pobrałeś z pliku referencyjnego.</p>
+<p class="image-container"><img alt="The State column with new information about the subscription region of the customer." style="width: 624.00px" src="img/76482234bb9885.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Stosowanie wartości do wszystkich komórek" duration="0">
+        <p>Zastosowanie określonej wartości do wielu komórek jednocześnie może zaoszczędzić dużo czasu podczas poprawiania nieprawidłowych komórek.</p>
+<p>Kolumna Stan jest ostatnią kolumną zawierającą nieprawidłowe dane. Ta kolumna zawiera listę stanów, z których klienci wypożyczyli film, przy użyciu dwuliterowego kodu. Można zauważyć, że wśród wszystkich innych kodów stanów USA wystąpienia Teksasu wyróżniają się jako błędy.</p>
+<p class="image-container"><img style="width: 141.00px" src="img/d82447c8e6501f88.png"></p>
+<p>Zamiast po prostu usuwać odpowiednie linie za pomocą paska jakości, tak jak to robiłeś wcześniej, poprawisz jedną z nieprawidłowych komórek i zastosujesz nową wartość do wszystkich komórek zawierających ten sam błąd. Aby zastąpić wystąpienia Teksasu poprawną wartością, wykonaj następujące czynności:</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>W kolumnie Stan kliknij dwukrotnie jedno z wystąpień stanu Teksas.<br>Możesz teraz edytować zawartość komórki. Po usunięciu poprzedniej wartości otworzy się lista rozwijana sugerująca wszystkie wartości wchodzące w skład<code>Kodeks stanu USA</code> typ semantyczny oparty na słowniku, posortowany alfabetycznie.</li>
+<li>Ponieważ kod Teksasu nie jest wyświetlany w pierwszych wynikach, zacznij pisać<code>T</code>, aby zobaczyć, jakie pojawią się wyniki.<br>Sugestie będą coraz dokładniejsze w miarę pisania. Jeśli jednak oczekiwaną wartość można już znaleźć na oryginalnej liście, możesz ją bezpośrednio wybrać.</li>
+<li>Z tej udoskonalonej listy wybierz kod stanu odpowiadający Teksasowi, czyli TX.</li>
+<li>Zaznacz pole wyboru Zastosuj do identycznych wartości.<br><img alt="Apply to identical values checkbox." style="width: 312.00px" src="img/ab57cc794080692c.png"></li>
+<li>Kliknij opcję Prześlij.</li>
+</ol>
+<h2 is-upgraded><strong>Wynik</strong></h2>
+<p>Wszystkie wystąpienia stanu Teksas zostały zastąpione poprawnym kodem stanu TX, a pasek jakości wskazuje teraz, że wszystkie dane w kolumnie Stan są poprawne.</p>
+<p>Należy pamiętać, że po wybraniu kolumny Stan dane są wizualizowane w formie interaktywnej mapy Stanów Zjednoczonych w panelu Profilowanie danych.</p>
+<p class="image-container"><img alt="Interactive map of the United States in the Data profiling panel." style="width: 297.00px" src="img/e6315b0bf2aae3b3.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Zmiana kolejności etapu przygotowawczego" duration="0">
+        <p>W Talend Cloud Data Przygotowanie każdy etap przygotowania, który zastosujesz na swoich danych, opiera się na poprzednim. W rezultacie, jeśli zastosowałeś już wiele kroków przygotowawczych do swoich danych, ale na początku zapomniałeś o jednej małej zmianie, nie osiągnąłbyś oczekiwanego rezultatu.</p>
+<p>W przypadku przygotowania składającego się z wielu etapów istnieje możliwość zmiany kolejności etapów przygotowania, tak aby zmiany weszły w życie we właściwej kolejności.</p>
+<p>We wcześniejszych krokach tuż przed wprowadzeniem poprawki w tej kolumnie dokonano wyszukiwania w kolumnie Stan, ponieważ wpis stanu Teksas miał nieprawidłowy format. Ponieważ ostatnia zmiana w kolumnie Stan została wprowadzona po wyszukiwaniu, w kolumnie Region dodanej podczas wyszukiwania brakuje obecnie niektórych informacji.</p>
+<p class="image-container"><img alt="State and Region columns with an empty cell in the Region column." style="width: 293.00px" src="img/afcc067d3e1b658e.png"></p>
+<p>Zamierzasz wykonać krok wyszukiwania i umieścić go jako ostatni etap przygotowań, aby upewnić się, że obejmuje wszystkie stany.</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>Wskaż myszką krok wyszukiwania.</li>
+<li>Aby przenieść krok wyszukiwania z przedostatniej pozycji na ostatnią, możesz:</li>
+</ol>
+<ul>
+<li>Przeciągnij krok przepisu i upuść go na dół przepisu.<br><img alt="Recipe with the Lookup step being dragged and dropped." style="width: 332.00px" src="img/56499b1e101539b.png"><br>szara linia pokazuje, gdzie przepis zostanie umieszczony.</li>
+<li>Możesz też kliknąć strzałkę w dół po lewej stronie kroku przepisu, aby przesunąć go w dół.<br><img alt="Down arrow on the left of the recipe." style="width: 327.00px" src="img/f4d644f60b7e2ddc.png"></li>
+</ul>
+<h2 is-upgraded><strong>Wynik</strong></h2>
+<p>Twoje przygotowanie zostanie automatycznie zaktualizowane o prawidłową sekwencję działań, a kolumna Region obejmuje teraz Teksas.</p>
+<p class="image-container"><img alt="The Texas value appears in the column." style="width: 260.00px" src="img/c695046f9bb786f3.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Używanie wykresów do filtrowania" duration="0">
+        <p>Łatwym sposobem zastosowania filtra do danych jest użycie wykresów przedstawiających graficzną reprezentację danych.</p>
+<p>Do izolowania wartości można używać filtrów, ułatwiając w ten sposób zastosowanie funkcji do określonej kategorii danych. Jednym z rozwiązań jest użycie paska jakości do wybrania pustych lub nieprawidłowych komórek, ale w tym przykładzie dowiesz się, jak filtrować dane za pomocą wykresów znajdujących się w prawym dolnym rogu interfejsu. W Talend Cloud Data Przygotowanie statystyki dla każdej kolumny dostępne są w formie wykresu.</p>
+<p>Wyobraź sobie, że chcesz lepiej zrozumieć rozkład wiekowy swoich klientów i zidentyfikować tych, którzy nie ukończyli 18 lat. Aby odfiltrować tę konkretną grupę klientów za pomocą wykresu, wykonaj następujące czynności:</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>Kliknij nagłówek kolumny Wiek, aby wybrać jej zawartość.<br><img alt="Age column selected." style="width: 132.00px" src="img/330601ec01a19086.png"><br>Graficzna reprezentacja zawartości kolumny wyświetlana jest w formie poziomego wykresu słupkowego, w prawym dolnym rogu ekranu. Każdy słupek reprezentuje liczbę wystąpień danej grupy wiekowej. Najechanie kursorem na każdy słupek powoduje wyświetlenie informacji o danych.<br><img alt="Graphical representation of the column&#39;s content." style="width: 325.00px" src="img/f15a9ba636d21aef.png"></li>
+<li>Na wykresie kliknij słupek poniżej 18 lat.<br>Twój preparat wyświetla teraz tylko linie odpowiadające klientom poniżej 18 roku życia. W górnej części ekranu widać, że filtr<code>Wiek = poniżej 18 lat</code> jest obecnie aktywny. Masz teraz możliwość zastosowania funkcji tylko do tej grupy klientów.<br><img alt="The filter is active." style="width: 548.00px" src="img/e0fe8af1b5e4e111.png"></li>
+<li>Aby wyczyścić filtr, po prostu kliknij ikonę x po prawej stronie filtra.</li>
+</ol>
+<h2 is-upgraded><strong>Wynik</strong></h2>
+<p>Przygotowanie wyświetla teraz ponownie pełną listę klientów.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Wykorzystanie wykresów do obliczenia wartości bezwzględnej" duration="0">
+        <p>Obliczanie wartości bezwzględnej liczby jest jedną z różnych funkcji matematycznych dostępnych do wykorzystania na danych.</p>
+<p>Jeśli przyjrzysz się bliżej kolumnie Liczba_wynajmów, zauważysz, że niektóre liczby mają wartość ujemną.</p>
+<p class="image-container"><img alt="Example of a negative value found in a column." style="width: 154.00px" src="img/76899dba688814c8.png"></p>
+<p>Komórki te nie są oznaczone jako nieprawidłowe na pasku jakości, ponieważ nadal pasują do typu semantycznego ustawionego automatycznie jako<code>liczba całkowita</code>. Niemniej jednak są to dane bezużyteczne. W rezultacie zastosujesz funkcję usuwającą znak ujemny dla wszystkich tych liczb.</p>
+<p>Aby obliczyć wartość bezwzględną swoich danych, wykonaj następujące czynności:</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>Kliknij nagłówek kolumny Liczba_wynajmów, aby wybrać jej zawartość.<br><img alt="Number_of_rentals column selected." style="width: 171.00px" src="img/73f379702a58e7cd.png"><br>W polu statystyk wyraźnie widać, że niektóre wartości mieszczą się w przedziale od -10 do 0.<br><img alt="The statistics box displaying the value range." style="width: 325.00px" src="img/a9d05c9f4169aac0.png"></li>
+<li>Na pionowym wykresie słupkowym w prawym dolnym rogu ekranu kliknij pierwszy słupek od lewej.<br><img alt="The statistic box with the first bar from the left selected." style="width: 332.00px" src="img/24d1a2b983a4b88e.png"><br>Ten słupek reprezentuje wszystkie wystąpienia wartości równych lub mniejszych od 0.<br>Do Twoich danych zastosowano teraz filtr. Twoje przygotowanie wyświetla teraz tylko linie o wartości równej lub mniejszej od zera dla liczby wypożyczeń. Możesz teraz zastosować funkcję tylko do tych komórek.<br><img alt="The filter is active." style="width: 624.00px" src="img/60b431e5b3fef754.png"></li>
+<li>Na liście funkcji, przed opcją Zastosuj zmiany do, wybierz przycisk opcji Filtrowane wiersze.</li>
+<li>Na liście funkcji kliknij opcję Oblicz wartość bezwzględną.<br><img alt="In the functions list, the Calculate absolute value function is selected." style="width: 324.00px" src="img/59352dcdfbc5d067.png"><br>Wszystkie wartości ujemne zostały przeliczone.</li>
+<li>Aby wyczyścić filtr, po prostu kliknij ikonę x po prawej stronie filtra.</li>
+</ol>
+<h2 is-upgraded><strong>Wynik</strong></h2>
+<p>Twoje przygotowanie ponownie wyświetla wszystkie dane. Jeśli jeszcze raz spojrzysz na pole statystyk w kolumnie Liczba_wynajmów, zobaczysz, że minimalna wartość wynosi teraz 0 zamiast -10. Poprawiłeś w ten sposób jakość i użyteczność swoich danych.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Harmonizacja formatu daty" duration="0">
+        <p>Przygotowanie danych w chmurze Talend obsługuje wiele różnych formatów daty, które możesz zharmonizować, aby poprawić swoje dane.</p>
+<p>W kolumnie SubDate widać, że nawet jeśli dane uwzględniają typ semantyczny ustawiony jako <code>data</code>, nie mają one tylko jednego formatu daty. W konsekwencji standardy europejskie i amerykańskie,<code>-</code> I<code>/</code> współistnieć.</p>
+<p class="image-container"><img alt="In the column, European and American date coexist." style="width: 94.00px" src="img/2070c97e907e87f.png"></p>
+<p>Zamierzasz zharmonizować kolumnę SubDate i ustawić tylko jeden format daty dla wszystkich swoich danych. Aby to zrobić:</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>Kliknij nagłówek kolumny SubDate, aby wybrać jej zawartość.<br><img alt="The SubDate column is selected." style="width: 145.00px" src="img/8a2f1d1b7a39f21f.png"></li>
+<li>W polu statystyk w prawym dolnym rogu kliknij Wzór.<br><img alt="In the statistics box, the Pattern feature is selected." style="width: 326.00px" src="img/16c0eac38b6ad699.png"><br>Ta zakładka zapewnia lepszy wgląd w różne aktualnie używane formaty daty. Niektóre daty są zgodne ze standardem europejskim, inne zaś według formatu amerykańskiego. W każdym razie widać, że <code>dd-MMM-rrrr</code> format jest najczęściej używany.</li>
+<li>Aby ujednolicić format daty, kliknij opcję Zmień format daty... na liście funkcji.<br><img alt="In the Table function list, the function Change date format is selected." style="width: 319.00px" src="img/2838e9ac855b2225.png"><br>Otworzy się menu, w którym możesz określić aktualny format daty i żądany.</li>
+<li>Na liście rozwijanej Bieżący format pozostaw opcję Nie wiem, najlepiej przypuszczam.</li>
+<li>Z listy rozwijanej Nowy format wybierz opcję Inny.</li>
+<li>W polu Twój format wpisz <code>dd-MMM-rrrr</code>.<br><img alt="The Change date format function is being configured." style="width: 314.00px" src="img/16f9db2cd459927.png"><br>The <code>dd-MMM-rrrr</code> format jest najbardziej odpowiedni, ponieważ zawiera już najwięcej wystąpień.</li>
+</ol>
+<h2 is-upgraded><strong>Wynik</strong></h2>
+<p>Kolumna SubDate ma teraz tylko jeden format daty, co ułatwia jej odczytanie. Możesz także zauważyć, że w przepisie podświetlona jest ostatnia czynność, a nawet można ponownie zmodyfikować format daty bezpośrednio z poziomu przepisu.</p>
+<p class="image-container"><img alt="The recipe expands the last action and its configuration." style="width: 308.00px" src="img/6e519e2e03568bfd.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Znajdowanie i grupowanie podobnych treści" duration="0">
+        <p>Wyszukiwanie i grupowanie podobnych tekstów można wykorzystać do ujednolicenia treści z niewielkimi różnicami.</p>
+<p>W <a href="https://help.talend.com/en-US/data-preparation-getting-started/Cloud/Content/Resources/attachments/customers.xlsx" target="_blank">klienci.xlsx</a> w pliku znajdują się informacje o zawodzie Twoich klientów. Niektóre wartości są do siebie dość podobne, na przykład student/absolwent i student. Sposobem na poprawę czytelności, a tym samym jakości danych, byłoby ponowne zgrupowanie niektórych z tych wartości.</p>
+<p>Aby znaleźć i pogrupować podobne treści, wykonaj następujące czynności:</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>Kliknij nagłówek kolumny Zawód, aby wybrać jej zawartość.<br><img alt="The Occupation column is selected." style="width: 145.00px" src="img/fa86a71b9cc1e0e4.png"><br>W polu statystyk możesz sprawdzić, czy zdarzają się tytuły stanowisk, które różnią się tylko nieznacznie.</li>
+<li>Na liście funkcji wybierz Znajdź i pogrupuj podobny tekst....<br>Otworzy się menu Znajdź i grupuj podobny tekst.<br><img alt="Find and group similar text menu." style="width: 563.00px" src="img/5c6e5ec5ccd884e2.png"><br>Wszystkie podobne zawody są zgrupowane w drugiej kolumnie. W tym przypadku student/absolwent i student. Trzecia kolumna sugeruje tytuł zawodu, który mógłby zastąpić wartości z drugiej kolumny. Możesz wybrać inną wartość z listy rozwijanej lub wpisać zupełnie nową. Wyczyść pola wyboru przed wartościami lub grupami wartości, które chcesz pozostawić bez zmian.</li>
+<li>Z listy rozwijanej w trzeciej kolumnie wybierz Student.</li>
+<li>Kliknij opcję Prześlij.</li>
+</ol>
+<h2 is-upgraded><strong>Wynik</strong></h2>
+<p>Wszystkie wystąpienia College/Grad Student i College Student zostały przegrupowane w ramach College Student, nowej zharmonizowanej wartości.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Dzielenie się gotowymi przygotowaniami" duration="0">
+        <p>Aby udostępnić swoje przygotowanie innym członkom projektu, możesz skorzystać z funkcji udostępniania.</p>
+<p>W tym przykładzie założono, że Ty i inni użytkownicy jesteście zarejestrowanymi użytkownikami Talend Cloud Data Preparation.</p>
+<p>Użytkownicy lub grupy użytkowników z Twojej organizacji będą mogli otwierać i edytować Twoje preparaty. Udostępnianie możliwe jest na poziomie folderu, a nie bezpośrednio na poziomie przygotowania.</p>
+<p>Aby utworzyć i udostępnić folder przygotowań, wykonaj następujące czynności:</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>Kliknij ikonę Wróć w lewym górnym rogu ekranu, aby zakończyć przygotowania.<br>Pamiętaj, że Twoje przygotowanie jest automatycznie zapisywane po każdym kroku.<br>Znajdujesz się teraz w widoku Przygotowania, gdzie na liście możesz zobaczyć Przygotowanie klientów.<br><img alt="The Preparations view with the Customers preparation listed." style="width: 624.00px" src="img/1775f6ef8447fac6.png"></li>
+<li>Kliknij ikonę Dodaj folder.<br>Otworzy się okno, w którym należy wprowadzić nazwę folderu.</li>
+<li>Typ<code>Pierwsze kroki</code> w pustym polu i kliknij Dodaj.<br>Folder Pierwsze kroki pojawi się teraz na liście w widoku Przygotowania.<br><img alt="The Getting Started folder is listed in the Preparations view." style="width: 624.00px" src="img/9819c34b53a54fb7.png"></li>
+<li>Najedź myszką na Przygotowanie Klienta, aby wyświetlić dostępne opcje i kliknij<img style="width: 6.00px" src="img/80701cc3f30e299c.png"> &gt; Przesuń ikonę przygotowania.<br><img alt="The Move preparation icon." style="width: 270.00px" src="img/12f716e61016d29b.png"><br>Otworzy się okno Przenieś swój preparat, w którym możesz wybrać folder docelowy dla swojego przygotowania.</li>
+<li>Wybierz folder Strona główna &gt; Pierwsze kroki i kliknij Przenieś.<br>Twoje przygotowanie znajduje się teraz w folderze Pierwsze kroki, jak widać na ścieżce nad przygotowaniem.</li>
+<li>Najedź kursorem myszy na folder Pierwsze kroki, aby wyświetlić dostępne opcje i kliknij<img style="width: 16.00px" src="img/4ac51a21bf1ecfb7.png"> Ikona.<br>Otworzy się okno udostępniania.</li>
+<li>Przeglądaj listę Wszyscy użytkownicy i grupy lub użyj paska wyszukiwania Wyszukaj użytkownika lub grupę, aby wybrać użytkownika lub grupę będącą częścią Twojego projektu.</li>
+<li>Kliknij użytkownika lub grupę, a następnie kliknij opcję Dodaj do listy, aby dodać ich do listy współpracowników.<br><img alt="Add to the List icon." style="width: 526.00px" src="img/cd79854a60116535.png"></li>
+<li>Jeśli to konieczne, powtórz ostatni krok, aby dodać więcej współpracowników i kliknij Udostępnij.</li>
+</ol>
+<h2 is-upgraded><strong>Wynik</strong></h2>
+<p>Po zmianie ikony folderu Pierwsze kroki widać, że została ona pomyślnie udostępniona wybranym użytkownikom.</p>
+<p class="image-container"><img alt="In the Getting Started folder, a message states that the folder is shared with other users." style="width: 537.00px" src="img/d798184a02e2bfe8.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Eksportowanie wyniku przygotowania" duration="0">
+        <p>Po zakończeniu przygotowań możesz wyeksportować oczyszczone dane.</p>
+<p>Aby wyeksportować preparat jako plik lokalny, wykonaj następujące czynności:</p>
+<h2 is-upgraded><strong>Kroki</strong></h2>
+<ol type="1" start="1">
+<li>Kliknij przycisk Eksportuj w prawym górnym rogu ekranu.<br><img alt="The Export menu." style="width: 522.00px" src="img/f4a6665cef54218e.png"><br>Tutaj możesz wybrać jedną z kilku opcji eksportu swojego preparatu:</li>
+</ol>
+<ul>
+<li>CSV</li>
+<li>XLSX</li>
+<li>Obraz</li>
+<li>Amazona S3</li>
+</ul>
+<ol type="1" start="2">
+<li>W tym przykładzie wyeksportujesz go jako plik XLSX.</li>
+<li>Kliknij przycisk opcji Lokalny plik XLSX na liście.</li>
+<li>W polu Nazwa pliku wprowadź nazwę pliku, w tym przykładzie: przygotowanie_klienta.<br><img alt="The Filename field with customers_preparation." style="width: 520.00px" src="img/fb0e309600f964ce.png"></li>
+<li>Kliknij Potwierdź.</li>
+</ol>
+<h2 is-upgraded><strong>Wynik</strong></h2>
+<p>Dane oczyszczone za pomocą preparatu zostały wyeksportowane do pliku lokalnego.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Gratulacje" duration="0">
+        <p>Gratulacje! Poznałaś(eś) właśnie funkcjonalność Talend Cloud Data Preparation</p>
+<h2 is-upgraded>Co dalej?</h2>
+<p>Teraz, gdy ukończyłeś ten podstawowy scenariusz czyszczenia danych, możesz poznać bardziej zaawansowane funkcje przygotowania danych w chmurze Talend.</p>
+<p>Funkcje te obejmują:</p>
+<ul>
+<li>Wykorzystaj swoje przygotowania bezpośrednio w przepływie zadań Talend w Talend Studio.</li>
+<li>Import większych plików i praca na próbce przed zastosowaniem preparatu do całych danych.</li>
+<li>Łączenie się z różnymi źródłami w celu samoobsługowego importu danych, na przykład z bazy danych, Amazon S3 lub Salesforce.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

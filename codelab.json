@@ -1,0 +1,22 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2024-05-13T17:53:44Z",
+  "id": "talend-klinika-zdrowia-danych-data-preparation",
+  "duration": 7,
+  "title": "Data Wizards - \"Klinika Zdrowia Danych Talend\"",
+  "authors": "Paweł Manowiecki",
+  "summary": "Żyjemy w erze Big Data. Gromadzimy coraz większą ilość danych, którymi należy odpowiednio zarządzać. Jeżeli chcemy podejmować decyzje biznesowe w oparciu o te dane, muszą być one wiarygodne i wysokiej jakości, czyli po prostu ZDROWE.\n\nZapraszamy Cię do Kliniki Zdrowia Danych gdzie zdobędziesz praktyczne umiejętności w zakresie zarządzania jakością danych.",
+  "source": "1hBatY-DtJUb2QjrfAudJR3EytoPtXnllVhPM6TNIUv0",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "web"
+  ],
+  "tags": [],
+  "url": "talend-klinika-zdrowia-danych-data-preparation"
+}
